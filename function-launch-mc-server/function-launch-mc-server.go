@@ -1,5 +1,5 @@
-// Package p contains an HTTP Cloud Function.
-package function_launch_mc_server
+// Package function contains an HTTP Cloud Function.
+package function
 
 import (
 	"fmt"
@@ -51,7 +51,7 @@ func LaunchMineServer(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Fprintf(w, buildResponse(resp.Status), resp)
+	fmt.Fprint(w, buildResponse(resp.Status))
 }
 
 func buildResponse(status string) string {
