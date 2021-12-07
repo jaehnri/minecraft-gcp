@@ -9,11 +9,10 @@ try:
     status = server.status()
 
     if status.players.online == 0:
-        print('[SCRIPT]: Turning server off')
+        print('[SCRIPT]: No one is playing. Turning server off.')
         os.system("/sbin/shutdown -h now")
     else:
-        print('[SCRIPT]: There are players online. Not turning server off')
+        print('[SCRIPT]: There are players online. Not turning server off.')
 except:
-    print('[SCRIPT]: Could not count players in server...')
-    print('[SCRIPT]: Turning off anyway!!')
+    print('[SCRIPT]: Could not count online players. Turning server off.')
     os.system('shutdown -h')
