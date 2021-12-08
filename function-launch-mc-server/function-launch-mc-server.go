@@ -55,10 +55,9 @@ func LaunchMineServer(w http.ResponseWriter, r *http.Request) {
 }
 
 func buildResponse(status string) string {
-	switch status {
-	case "DONE":
+	if status == "DONE" {
 		return "Servidor já está aberto!"
-	default:
-		return "Servidor está iniciando. Espere um minuto."
 	}
+	
+	return "Servidor está iniciando. Espere um minuto."
 }
